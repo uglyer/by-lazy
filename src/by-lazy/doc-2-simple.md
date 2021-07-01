@@ -44,6 +44,6 @@ class Example {
   testObject: Promise<TestObject>;
 
   @byLazy(() => fetch('./test.json').then((res) => res.json()))
-  featchResult: Promise<{ test: string }>;
+  fetchResult: Promise<{ test: string }>;
 }
 ```

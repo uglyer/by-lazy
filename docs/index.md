@@ -1,7 +1,7 @@
 ---
 hero:
   title: byLazy
-  desc: 成员变量懒加载装饰器
+  desc: 一种延迟加载方式, 受 Kotlin by lazy 启发, JS 端的懒加载装饰器(支持异步)
   actions:
     - text: Getting Started
       link: /guide
@@ -41,7 +41,7 @@ class Example {
   @byLazy(() =>
     import('./TestObject').then((module) => new module.TestObject()),
   )
-  testObject: TestObject;
+  testObject: Promise<TestObject>;
 
   @byLazy(() => fetch('./test.json').then((res) => res.json()))
   featchResult: Promise<{ test: string }>;

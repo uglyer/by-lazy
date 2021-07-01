@@ -16,6 +16,13 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "files": [
+    "/dist",
+    "/examples",
+    "package.json",
+    "README.md",
+    "ChangeLog.md"
+  ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -28,9 +35,10 @@
     ]
   },
   "dependencies": {
-    "react": "^16.12.0"
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
+    "react": "^16.12.0",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.0.16",
     "father-build": "^1.17.2",

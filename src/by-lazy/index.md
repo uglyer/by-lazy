@@ -1,7 +1,7 @@
 ---
 nav:
-  title: Components
-  path: /components
+  title: 指南
+  path: /guide
 ---
 
 ## Foo

@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "by-lazy",
+  "description": "一种延迟加载方式, 受 Kotlin by lazy 启发, JS 端的懒加载装饰器(支持异步)",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -13,6 +14,25 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uglyer/by-lazy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uglyer/by-lazy/issues"
+  },
+  "homepage": "https://by-lazy.com.com.sb",
+  "keywords": [
+    "by-lazy",
+    "byLazy",
+    "async",
+    "await",
+    "lock",
+    "es2017",
+    "yield",
+    "generator",
+    "promise"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",

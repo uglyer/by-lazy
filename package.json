@@ -1,7 +1,7 @@
 {
   "name": "by-lazy",
   "description": "一种延迟加载方式, 受 Kotlin by lazy 启发, JS 端的懒加载装饰器(支持异步)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",

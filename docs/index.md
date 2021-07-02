@@ -38,9 +38,7 @@ class Example {
 import { byLazy } from 'by-lazy';
 
 class Example {
-  @byLazy(() =>
-    import('./TestObject').then((module) => new module.TestObject()),
-  )
+  @byLazy(() => import('./TestObject').then((module) => new module.TestObject()))
   testObject: Promise<TestObject>;
 
   @byLazy(() => fetch('./test.json').then((res) => res.json()))

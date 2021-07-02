@@ -27,10 +27,7 @@ class Example {
 import { byLazy, releaseByLazyInstance } from 'by-lazy';
 
 class Example {
-  @byLazy(
-    () => new TestObject(),
-    (instance) => console.log('如果被实例化, 释放时调用'),
-  )
+  @byLazy(() => new TestObject(), (instance) => console.log('如果被实例化, 释放时调用'))
   testObject: TestObject;
 
   release() {

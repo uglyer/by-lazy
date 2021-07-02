@@ -6,6 +6,48 @@
 
 支持异步锁, 无需担心异步任务执行多次
 
+## 基础用法
+
+### 安装
+
+```shell script
+npm i by-lazy
+```
+
+### 配置 tsconfig.json
+
+```json
+{
+    "experimentalDecorators": true,
+    ...
+}
+```
+
+### 同步执行
+
+```typescript | pure
+import { byLazy } from 'by-lazy';
+
+class Example {
+  @byLazy(() => new TestObject())
+  testObject: TestObject;
+}
+```
+
+### 异步执行
+
+```typescript | pure
+import { byLazy } from 'by-lazy';
+
+class Example {
+  @byLazy(() => import('./TestObject').then((module) => new module.TestObject()))
+  testObject: Promise<TestObject>;
+
+  @byLazy(() => fetch('./test.json').then((res) => res.json()))
+  fetchResult: Promise<{ test: string }>;
+}
+```
+
 ### 执行顺序
 
 ```typescript
@@ -41,9 +83,7 @@ import { byLazy } from 'by-lazy';
 
 class Example {
   // 低频使用功能, 动态加载(dynamic import) 以降低初始包体积
-  @byLazy(() =>
-    import('./TestObject').then((module) => new module.TestObject()),
-  )
+  @byLazy(() => import('./TestObject').then((module) => new module.TestObject()))
   testObject: Promise<TestObject>;
 
   @byLazy(() => fetch('./test.json').then((res) => res.json()))
